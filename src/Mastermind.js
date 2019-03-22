@@ -8,6 +8,7 @@ const purple = require('./images/purpleCircle.png');
 const teal = require('./images/tealCircle.png');
 const magenta = require('./images/magentaCircle.png');
 const emptyCircle = require('./images/emptyCircle.png');
+const black = require('./images/blackCircle.png');
 
 const NUM_ROWS = 6;
 
@@ -284,8 +285,8 @@ class Mastermind extends Component {
 
             // fill remaining appropriately with correct color wrong positions
             for (let i = correctColorPositionCount; i < correctColorPositionCount + correctColorWrongPositionCount; i++) {
-                newFeedback[rowIdx][i].colorName = 'Purple';
-                newFeedback[rowIdx][i].color = purple;
+                newFeedback[rowIdx][i].colorName = 'Black';
+                newFeedback[rowIdx][i].color = black;
             }
         }
 
@@ -425,7 +426,7 @@ class Mastermind extends Component {
                                 One guess comprises of filling a row with colors. After each guess you will get
                                 feedback in the four smaller circles on the right. The number of pegs that are of
                                 the right color and in the correct position show by a green circle, and the number
-                                of pegs that are of the correct color but not in the correct position by a purple circle.'
+                                of pegs that are of the correct color but not in the correct position by a black circle.'
                         closePopup={this.togglePopup.bind(this)}
                     />
                     : null

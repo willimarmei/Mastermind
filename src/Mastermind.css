@@ -2,23 +2,19 @@
     width: 600px;
     margin: 100px;
     text-align: center;
-    background-color: grey;
 }
 
 .winning_table {
     margin-left: auto;
     margin-right: auto;
-    background-color: aqua;
 }
 
 .board_table {
-    background-color: red;
     margin: 0 auto;
 }
 
 .feedback_table {
     margin-left: 20px;
-    background-color: grey;
 
 }
 
