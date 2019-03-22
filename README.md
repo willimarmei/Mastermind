@@ -1,3 +1,14 @@
+Implementation of Mastermind via these instructions https://drive.google.com/file/d/1R1i_DGcvOdSbomBVMrWGDXOFmCOM5Nma/view?usp=sharing
+
+
+Mandatory TODO:
+    Show the last feedback array
+    Fix spacing issue
+    Change feedback circle colors
+Optional TODO:
+    Levels (time, number of rows)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
