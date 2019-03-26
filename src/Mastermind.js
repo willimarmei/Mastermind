@@ -1,3 +1,8 @@
+// Author: Marguerite Williams
+// Date: 3/26/19
+// Class: CS 386
+// Description: React implementation of the classic mastermind game.
+
 import React, { Component } from 'react';
 import './Mastermind.css';
 
