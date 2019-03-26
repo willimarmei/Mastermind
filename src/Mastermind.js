@@ -456,14 +456,12 @@ class Mastermind extends Component {
 
 
     render() {
-        console.log('state = ', this.state);
-        console.log('height of div = ', (NUM_ROWS - this.state.currentRow) * 85);
         return (
             <div className="Mastermind">
                 {this.topMessage()}
                 {this.statusRow()}
                 {this.winningTable()}
-                <div style={{height: ((NUM_ROWS - this.state.currentRow) * 60).toString() + "px"}}>&nbsp;</div>
+                <div style={{height: ((NUM_ROWS - this.state.currentRow) * 58).toString() + "px"}}>&nbsp;</div>
                 <table align="center" style={{ paddingTop: "25px"}}>
                     <tbody>
                         { this.state.mastermindArray.map((row, idx) =>
