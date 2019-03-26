@@ -2,9 +2,7 @@ Implementation of Mastermind via these instructions https://drive.google.com/fil
 
 
 Mandatory TODO:
-    Show the last feedback array
     Fix spacing issue
-    Change feedback circle colors
 Optional TODO:
     Levels (time, number of rows)
 
