@@ -10,7 +10,7 @@ const magenta = require('./images/magentaCircle.png');
 const emptyCircle = require('./images/emptyCircle.png');
 const white = require('./images/whiteCircle.png');
 
-const NUM_ROWS = 3;
+const NUM_ROWS = 6;
 
 let uniqueSeed = 0;
 function nextUniqueKey() {
@@ -457,13 +457,14 @@ class Mastermind extends Component {
 
     render() {
         console.log('state = ', this.state);
+        console.log('height of div = ', (NUM_ROWS - this.state.currentRow) * 85);
         return (
             <div className="Mastermind">
                 {this.topMessage()}
                 {this.statusRow()}
                 {this.winningTable()}
-
-                <table align="center" style={{height: (NUM_ROWS * 75).toString() + "px", paddingTop: "25px"}}>
+                <div style={{height: ((NUM_ROWS - this.state.currentRow) * 60).toString() + "px"}}>&nbsp;</div>
+                <table align="center" style={{ paddingTop: "25px"}}>
                     <tbody>
                         { this.state.mastermindArray.map((row, idx) =>
                             <MasterMindTableRow
