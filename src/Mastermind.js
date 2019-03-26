@@ -8,11 +8,9 @@ const purple = require('./images/purpleCircle.png');
 const teal = require('./images/tealCircle.png');
 const magenta = require('./images/magentaCircle.png');
 const emptyCircle = require('./images/emptyCircle.png');
-const black = require('./images/blackCircle.png');
 const white = require('./images/whiteCircle.png');
 
-
-const NUM_ROWS = 6;
+const NUM_ROWS = 3;
 
 let uniqueSeed = 0;
 function nextUniqueKey() {
@@ -73,9 +71,6 @@ class FeedBackCell extends Component {
     }
 }
 
-
-// Class for the state circles
-// Optional class to show the goal state--useful for debugging
 
 class Cell extends Component {
     render() {
@@ -235,6 +230,15 @@ class Mastermind extends Component {
 
             if(!gameover && this.state.currentRow !== NUM_ROWS - 1) {
                 this.createNewRow(newBoard);
+
+                let nextFeedback = [
+                    this.emptyCircle,
+                    this.emptyCircle,
+                    this.emptyCircle,
+                    this.emptyCircle
+                ];
+
+                newFeedback.unshift(nextFeedback);
             }
         }
 
@@ -248,14 +252,6 @@ class Mastermind extends Component {
 
     calculateFeedback(newBoard, rowIdx, newFeedback) {
         let won = false;
-
-        let nextFeedback = [
-                this.emptyCircle,
-                this.emptyCircle,
-                this.emptyCircle,
-                this.emptyCircle
-        ];
-
         let correctColorPositionCount = 0;
         let correctColorWrongPositionCount = 0;
         let feedbacktracker = [false, false, false, false];
@@ -296,12 +292,10 @@ class Mastermind extends Component {
             }
         }
 
-        newFeedback.unshift(nextFeedback);
         this.setState({feedbackArray: newFeedback});
 
         if (correctColorPositionCount === 4) {
             console.log("We have a winner!");
-            newFeedback.unshift(nextFeedback);
             won = true;
         }
 
@@ -356,8 +350,7 @@ class Mastermind extends Component {
                         this.paletteColors.map((paletteElement, idx) =>
                             <td
                                 key={idx}
-                                onClick={() => this.selectedPaletteCircle(paletteElement)}
-                            >
+                                onClick={() => this.selectedPaletteCircle(paletteElement)}>
                                 <img className="large_circle" src={paletteElement.color} alt={paletteElement.colorName} />
                             </td>
                         )
