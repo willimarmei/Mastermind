@@ -133,6 +133,8 @@ class Mastermind extends Component {
 
         this.state = this.initialState;
 
+        this.toggleWinningRowVisibility = this.toggleWinningRowVisibility.bind(this);
+
         this.handleClick = this.handleClick.bind(this);
         this.reset = this.reset.bind(this);
     }
@@ -176,6 +178,7 @@ class Mastermind extends Component {
             feedbackArray: [rowFeedback],
             mastermindArray: [row],
             winningRow: winningRow,
+            showWinningCircles: false,
             showPopup: false,
             haveAWinner: false,
             gameOver: false
@@ -187,6 +190,14 @@ class Mastermind extends Component {
         this.setState({
             showPopup: !this.state.showPopup
         });
+    }
+
+    // Used by the "Show Winning Circles" checkbox. Toggles whether or not the
+    // winning circles should be visible.
+    // NOTE: Winning circles are forced to be visible when the game ends.
+    toggleWinningRowVisibility(event)
+    {
+        this.setState({showWinningCircles: event.target.checked});
     }
 
     paletteColors = [
@@ -230,6 +241,7 @@ class Mastermind extends Component {
             newFeedback = feedbackResult[0];
             won = feedbackResult[1];
             if (won || this.state.currentRow === NUM_ROWS - 1) {
+                this.state.showWinningCircles = true;
                 gameover = true;
             }
 
@@ -367,17 +379,19 @@ class Mastermind extends Component {
 
 
     winningTable() {
-        return <table className="winning_table">
-            <tbody>
+        if(this.state.showWinningCircles) {
+            return <table className="winning_table">
+                <tbody>
                 <tr>
                     {this.state.winningRow.map((paletteElement, idx) =>
-                    <td key={idx}>
-                        <img className="small_circle" src={paletteElement.color} alt={paletteElement.colorName} />
-                    </td>
+                        <td key={idx}>
+                            <img className="small_circle" src={paletteElement.color} alt={paletteElement.colorName}/>
+                        </td>
                     )}
                 </tr>
-            </tbody>
-        </table>;
+                </tbody>
+            </table>;
+        }
     }
 
     statusRow() {
@@ -389,6 +403,9 @@ class Mastermind extends Component {
         return <table className="status_circles">
             <tbody>
                 <tr>
+                    <td>
+                        <label>Show Winning Circles<input type="checkbox" name="showWinningCircles" checked={this.state.showWinningCircles} onChange={this.toggleWinningRowVisibility}/></label>
+                    </td>
                     <td>
                         Selected Color:
                     </td>
