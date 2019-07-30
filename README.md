@@ -1,14 +1,8 @@
-## To Run
-- npm run start (by default it should run on http://localhost:3000/)
-
 ## Project Goals
-- Implementation of Mastermind via these instructions https://drive.google.com/file/d/1R1i_DGcvOdSbomBVMrWGDXOFmCOM5Nma/view?usp=sharing
+- Implementation of Mastermind in React.js via these instructions https://drive.google.com/file/d/1R1i_DGcvOdSbomBVMrWGDXOFmCOM5Nma/view?usp=sharing
 
 ## Future Features
 - Levels (time, number of rows)
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -17,7 +11,7 @@ In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [http://localhost:8263](http://localhost:8263) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
