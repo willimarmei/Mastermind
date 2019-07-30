@@ -1,11 +1,11 @@
 ## Project Goals
 - Implementation of Mastermind in React.js via these instructions https://drive.google.com/file/d/1R1i_DGcvOdSbomBVMrWGDXOFmCOM5Nma/view?usp=sharing
 
-## Future Features
-- Levels (time, number of rows)
-
 ## Demo
 ![demo gif1](gameplay.gif)
+
+## Future Features
+- Levels (time, number of rows)
 
 ## Available Scripts
 
