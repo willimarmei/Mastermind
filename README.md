@@ -1,9 +1,11 @@
-Implementation of Mastermind via these instructions https://drive.google.com/file/d/1R1i_DGcvOdSbomBVMrWGDXOFmCOM5Nma/view?usp=sharing
+## To Run
+- npm run start (by default it should run on http://localhost:3000/)
 
+## Project Goals
+- Implementation of Mastermind via these instructions https://drive.google.com/file/d/1R1i_DGcvOdSbomBVMrWGDXOFmCOM5Nma/view?usp=sharing
 
-
-Optional TODO:
-    Levels (time, number of rows)
+## Future Features
+- Levels (time, number of rows)
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
