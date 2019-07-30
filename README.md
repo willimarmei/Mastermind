@@ -4,6 +4,9 @@
 ## Future Features
 - Levels (time, number of rows)
 
+## Demo
+![demo gif1](gameplay.gif)
+
 ## Available Scripts
 
 In the project directory, you can run:
